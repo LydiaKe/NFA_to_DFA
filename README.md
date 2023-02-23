@@ -12,5 +12,7 @@ Example input and output:
 ![image](https://user-images.githubusercontent.com/48944621/220795121-4839cf25-e048-443e-aa73-f82bfc05e524.png)
 
 FA.py: the definition of the general fa(finite automaton) class, nfa class and dfa class.
+
 NFA_to_DFA.py: the NFA_to_DFA conversion function.(input: NFA return: DFA)
+
 main.py: the main file.(terminal input and output)
