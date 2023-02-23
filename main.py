@@ -18,11 +18,12 @@ f = q1
 from FA import FA, NFA, DFA
 from NFA_to_DFA import  NFA_to_DFA
 
-
+# input
 relation = input("Please input the relation:\n")
 initial = input("Please input the initial state:\n")
 final = input("Please input the final state:\n")
 
+# accommodate the input
 relation = relation.split(",")
 table = []
 for r in range(0, len(relation), 3):
@@ -30,15 +31,18 @@ for r in range(0, len(relation), 3):
     relation[r + 1] = relation[r + 1].strip()
     relation[r + 2] = relation[r + 2].replace(")", "").strip()
     table.append((relation[r], relation[r + 1], relation[r + 2]))
-
 final = final.split(",")
 
+# create the NFA
 nfa = NFA(t=table, i=initial, f=final)
 nfa.init_nfa()
 
+# convert
 dfa = NFA_to_DFA(nfa)
 
+# initialize the DFA
 dfa.init_dfa()
 
+# output
 print("The transitive function of the DFA:", dfa.dict)
 print("The final state(s):", dfa.final_state)
